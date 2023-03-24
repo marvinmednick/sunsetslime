@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import styles from '../styles/Navbar.module.css';
+import LoginButton from './login-btn.jsx'
 
 const Navbar = () => {
   const cart = useSelector((state) => state.cart);
@@ -14,6 +15,9 @@ const Navbar = () => {
       <h6 className={styles.logo}>Sunset Slime</h6>
       <ul className={styles.links}>
         <li className={styles.navlink}>
+          <LoginButton />
+        </li>
+        <li className={styles.navlink}>
           <Link href="/">Home</Link>
         </li>
         <li className={styles.navlink}>
@@ -21,7 +25,7 @@ const Navbar = () => {
         </li>
         <li className={styles.navlink}>
           <Link href="/cart">
-            <a>Cart ({getItemsCount()})</a>
+            Cart ({getItemsCount()})
           </Link>
         </li>
       </ul>

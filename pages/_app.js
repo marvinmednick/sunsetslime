@@ -7,11 +7,11 @@ import { SessionProvider } from "next-auth/react"
 
 function MyApp({
     Component,
-    pageProps: { session, ...pageProps }
-) {
+    pageProps: { session, ...pageProps },
+} ) {
 
   return (
-    <SessionProvider session={sesion}>
+    <SessionProvider session={session}>
     <Provider store={store}>
       <div className="wrapper">
         <Navbar />
@@ -19,7 +19,7 @@ function MyApp({
         <Footer />
       </div>
     </Provider>
-    <SessionProvider session={sesion}>
+    </SessionProvider>
   );
 }
 

@@ -6,6 +6,8 @@ import {
   removeFromCart,
 } from '../redux/cart.slice';
 import styles from '../styles/CartPage.module.css';
+import OrderForm from '../components/OrderForm'
+import NewOrderForm from '../components/NewOrderForm'
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -55,6 +57,9 @@ const CartPage = () => {
             </div>
           ))}
           <h2>Grand Total: $ {getTotalPrice().toFixed(2)}</h2>
+          <div>
+              <NewOrderForm cart={cart}/>
+          </div>
         </>
       )}
     </div>
