@@ -1,4 +1,14 @@
-[
+{ "category_list" : [
+    { "category": "crunchy",
+        "desc": "Crunchy Slime"
+    },
+    {
+      "category": "glitter",
+      "desc": "Glitter Slime"
+    }
+  
+    ],
+    "product_list" : [
   {
     "id": 1,
     "product": "Strawberry Crunch",
@@ -8,9 +18,9 @@
   },
   {
     "id": 2,
-    "product": "Grand Theft Auto 5",
-    "category": "xbox",
-    "image": "https://imgur.com/BqNWnDB.png",
+    "product": "Sparlkefest",
+    "category": "glitter",
+    "image": "/images/glitter-slime-04288-800x1200.jpg",
     "price": 21.99
   },
   {
@@ -210,3 +220,4 @@
     "price": 13.99
   }
 ]
+}

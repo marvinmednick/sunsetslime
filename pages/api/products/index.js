@@ -1,7 +1,7 @@
 import data from './data.json';
 
 export function getProducts() {
-  return data;
+  return data.product_list;
 }
 
 export default function handler(req, res) {
