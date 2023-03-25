@@ -6,7 +6,11 @@ import {getCategoryDescription} from '../pages/api/products/index.js'
 const CategoryCard = ({ image, name }) => {
   return (
     <div className={styles.card}>
-      <Image className={styles.image} src={image} height={300} width={400} />
+      <Image className={styles.image}
+        src={image}
+        width={400}
+        height={300}
+      />
       <Link href={`/category/${name.toLowerCase()}`}>
         <div className={styles.info}>
           <h3>{getCategoryDescription(name)}</h3>
