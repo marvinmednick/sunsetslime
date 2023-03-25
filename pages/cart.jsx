@@ -4,10 +4,32 @@ import {
   incrementQuantity,
   decrementQuantity,
   removeFromCart,
+  reloadCar,t
 } from '../redux/cart.slice';
+
 import styles from '../styles/CartPage.module.css';
 import OrderForm from '../components/OrderForm'
 import NewOrderForm from '../components/NewOrderForm'
+import { useEffect } from 'react';
+
+
+// load string from localStarage and convert into an Object
+// invalid output must be undefined
+function loadFromLocalStorage() {
+
+      if  (typeof window === "undefined") {
+          return undefined
+      }
+      try {
+        const serialisedState = localStorage.getItem("persistantState");
+        if (serialisedState === null) return undefined;
+        return JSON.parse(serialisedState);
+      } catch (e) {
+        console.warn(e);
+        return undefined;
+      }
+}
+
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -19,6 +41,11 @@ const CartPage = () => {
       0
     );
   };
+
+  useEffect(() => {
+      const localInfo = loadFromLocalStorage();
+      console.log(JSON.stringify(localInfo));
+  }, []);
 
   return (
     <div className={styles.container}>
