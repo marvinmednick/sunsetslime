@@ -4,7 +4,7 @@ import {
   incrementQuantity,
   decrementQuantity,
   removeFromCart,
-  reloadCar,t
+  reloadCart,
 } from '../redux/cart.slice';
 
 import styles from '../styles/CartPage.module.css';
@@ -42,10 +42,20 @@ const CartPage = () => {
     );
   };
 
+    /*
+  let localInfo = undefined;
   useEffect(() => {
-      const localInfo = loadFromLocalStorage();
-      console.log(JSON.stringify(localInfo));
+      localInfo = loadFromLocalStorage();
+      console.log("While in useEffect" + JSON.stringify(localInfo));
+      dispatch(reloadCart(localInfo) );
   }, []);
+
+  console.log("After useEffect: " + JSON.stringify(localInfo));
+  if (localInfo !== undefined ){
+      console.log("Dispatch Reload Cart");
+      dispatch(reloadCart, localInfo);
+  }
+  */
 
   return (
     <div className={styles.container}>

@@ -30,6 +30,16 @@ const cartSlice = createSlice({
       state.splice(index, 1);
     },
     reloadCart:  (state, action) => {
+        console.log("Action: : " + JSON.stringify(action) );
+        if (action.payload !== undefined && action.payload.hasOwnProperty('cart') )  { 
+            console.log("State: " + JSON.stringify(state), 
+                "Action: : " + JSON.stringify(action) + "len: " + action.payload.cart.length);
+
+            if (action.payload.cart.length > 0 && state.length === 0) {
+                state.push(...action.payload.cart);
+                console.log("After push " + JSON.stringify(state));
+            }
+        }
     }
   },
 });
@@ -41,4 +51,5 @@ export const {
   incrementQuantity,
   decrementQuantity,
   removeFromCart,
+  reloadCart,
 } = cartSlice.actions;
