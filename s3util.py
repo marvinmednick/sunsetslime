@@ -206,7 +206,8 @@ if __name__ == '__main__':
 
     parser.add_argument('-b', '--buckets', action='store_true', help='List all buckets')
     parser.add_argument('-l', '--list', action='store_true', help='list objects in a bucket')
-#    parser.add_argument('-c', '--create', action='store_true', help='create a DynamoDB table with the specified name')
+#    parser.add_argument('-c', '--create', action='store_true', help='create a S3 Bucket table with the specified name')
+    parser.add_argument('-u', '--upload', help='upload filename to the S3 Bucket table ')
     parser.add_argument('-r', '--region', metavar='REGION_NAME', type=str, help='use the specified regiion')
     parser.add_argument('-v', '--verbose', action='store_true')  # on/off flag')
     parser.add_argument('bucket', nargs='?', metavar='S3 BUCKET', type=str, help='the name of a S3 Bucket to work with')
@@ -236,7 +237,7 @@ if __name__ == '__main__':
         exit(0)
 
     if args.bucket is None:
-        print("Bucket name is required for all commands except --list")
+        print("Bucket name is required for all commands except --buckets")
         exit(1)
     
 
@@ -250,5 +251,10 @@ if __name__ == '__main__':
         objects = buicket.objects()
         for obj in objects:
             print(f"   - {obj}")
+
+    if args.upload:
+        # Upload the file to the specified bucket
+    with open(file_path, "rb") as f:
+        s3.upload_fileobj(f, args.bucket, file_path)
 
 

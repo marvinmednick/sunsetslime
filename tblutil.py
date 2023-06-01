@@ -70,10 +70,12 @@ class DynTable:
         :param info: dictionary with feilds of record to add
         """
 
+        print(f"Adding entry PK: {pk} SK: {sk} Info: {info}")
+
         try:
             item={
-                'pk': pk,
-                'sk': sk,
+                'PK': pk,
+                'SK': sk,
                 }
             item.update(info)
             self.table.put_item(Item=item)
@@ -175,7 +177,7 @@ if __name__ == '__main__':
                 epilog = 'dun dun te dun... '
     )
 
-    parser.add_argument('-l', '--list', action='store_true', help='create a DynamoDB table with the specified name')
+    parser.add_argument('-l', '--list', action='store_true', help='list the available DynamoDB tables')
     parser.add_argument('-c', '--create', action='store_true', help='create a DynamoDB table with the specified name')
     parser.add_argument('-r', '--region', metavar='REGION_NAME', type=str, help='use the specified regiion')
     parser.add_argument('-v', '--verbose', action='store_true')  # on/off flag')
@@ -222,7 +224,7 @@ if __name__ == '__main__':
         # Retrieve the two parameters passed with the "-a" argument
         parsed = json.loads(attr,parse_float=Decimal)
         # Do something with the id and text values, such as adding them to a table
-        print(f"Adding entry {pk} {sk} {parsed}")
+        print(f"Adding entry PK: {pk} SK: {sk} {parsed}")
         table.add_item(str(pk),str(sk),parsed)
 
 

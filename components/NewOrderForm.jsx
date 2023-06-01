@@ -10,6 +10,50 @@ function handle_form(cart, data) {
   alert(JSON.stringify(data) + "\n" + JSON.stringify(cart));
 }
 
+// Load the AWS SDK for Node.js
+var AWS = require('aws-sdk');
+// Set the region 
+AWS.config.update({region: 'us-west-2'});
+
+// Create sendEmail params 
+var params = {
+  Destination: { /* required */
+    ToAddresses: [
+      'marvinmednick@gmail.com',
+      /* more items */
+    ]
+  },
+  Message: { /* required */
+    Body: { /* required */
+      Text: {
+       Charset: "UTF-8",
+       Data: "This is a test message from my app"
+      }
+     },
+     Subject: {
+      Charset: 'UTF-8',
+      Data: 'Test email'
+     }
+    },
+  Source: 'mmednick@gmail.com', /* required */
+  ReplyToAddresses: [
+     'mmednick@gmail.com',
+    /* more items */
+  ],
+};
+
+// Create the promise and SES service object
+var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
+
+// Handle promise's fulfilled/rejected states
+sendPromise.then(
+  function(data) {
+    console.log(data.MessageId);
+  }).catch(
+    function(err) {
+    console.error(err, err.stack);
+  });
+
 export default function NewOrderForm(cart) {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => handle_form(cart, data);

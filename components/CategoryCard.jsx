@@ -9,7 +9,7 @@ const CategoryCard = ({ image, name }) => {
       <Image className={styles.image}
         src={image}
         width={400}
-        height={300}
+        height={100}
       />
       <Link href={`/category/${name.toLowerCase()}`}>
         <div className={styles.info}>
