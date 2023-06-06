@@ -1,79 +1,105 @@
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from 'react-redux';
+import styles from './NewOrderForm.module.css';
 import {
   incrementQuantity,
   decrementQuantity,
   removeFromCart,
 } from '../redux/cart.slice';
 
-function handle_form(cart, data) {
-  alert(JSON.stringify(data) + "\n" + JSON.stringify(cart));
+async function handle_form(cart, data) {
+  
+    alert(JSON.stringify(data) + "\n" + JSON.stringify(cart));
+    const staticFormData = {
+      "Name": "Marvin Mednick",
+      "Address": "2135 Abbey Lane, Campbell, CA 95008",
+      "Email": "marvinmednick@gmail.com",
+      "Phone": "556-123-4567",
+      "Items": [
+        {
+          "ID": "20",
+          "Description": "Product 20 a slime",
+          "Price": 1.99
+        },
+        {
+          "ID": "21",
+          "Description": "Product 21 a crunchy slime",
+          "Price": 1.99
+        },
+        {
+          "ID": "22",
+          "Description": "Product 23 more slime",
+          "Price": 1.99
+        }
+      ]
+    }
+
+
+    try {
+      // Send a POST request to the external URL using fetch
+     const url = ' https://9ddb7dp853.execute-api.us-west-2.amazonaws.com/default/SlimeProductOrder'
+     //   const url = 'http://localhost:8080'
+
+      const response = await fetch( url,
+          { 
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(staticFormData),
+          }
+      );
+
+      console.log("Fetch complete")
+
+      // Handle the response if needed
+      //let data = await response.json();
+      //console.log("## DATA")
+      //console.log(data);
+
+      // Reset the form
+      //setName('');
+      //setAddress('');
+      //setEmail('');
+      //setPhone('');
+    } catch (error) {
+      console.log("Error during fetch")
+      // Handle the error
+      console.error(error);
+    }
 }
 
-// Load the AWS SDK for Node.js
-var AWS = require('aws-sdk');
-// Set the region 
-AWS.config.update({region: 'us-west-2'});
-
-// Create sendEmail params 
-var params = {
-  Destination: { /* required */
-    ToAddresses: [
-      'marvinmednick@gmail.com',
-      /* more items */
-    ]
-  },
-  Message: { /* required */
-    Body: { /* required */
-      Text: {
-       Charset: "UTF-8",
-       Data: "This is a test message from my app"
-      }
-     },
-     Subject: {
-      Charset: 'UTF-8',
-      Data: 'Test email'
-     }
-    },
-  Source: 'mmednick@gmail.com', /* required */
-  ReplyToAddresses: [
-     'mmednick@gmail.com',
-    /* more items */
-  ],
-};
-
-// Create the promise and SES service object
-var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
-
-// Handle promise's fulfilled/rejected states
-sendPromise.then(
-  function(data) {
-    console.log(data.MessageId);
-  }).catch(
-    function(err) {
-    console.error(err, err.stack);
-  });
 
 export default function NewOrderForm(cart) {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => handle_form(cart, data);
   const dispatch = useDispatch();
 
-  console.log(watch("example")); // watch input value by passing the name of it
-
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Name</label>
+      <label className={styles.label}>Name: </label>
       {/* register your input into the hook by invoking the "register" function */}
-      <input defaultValue="First" {...register("firstName", {required: true})} />
+      <input className={styles.input} type="text" defaultValue="Your Name" {...register("name", {required: true})} />
       {/* errors will return when field validation fails  */}
-      {errors.firstName && <span>This field is required</span>}
+      {errors.name && <span className={styles.error} >This field is required</span>}
       <br /> 
+      <label className={styles.label}>Mailing Address: </label>
       {/* include validation with required or other standard HTML validation rules */}
-      <input defaultValue="Last"{...register("lastName", { required: true })} />
+      <input className={styles.input} type="text" defaultValue="Your Mailing Address"{...register("address", { required: true })} />
       {/* errors will return when field validation fails  */}
-      {errors.lastName && <span>This field is required</span>}
+      {errors.address && <span className={styles.error} >This field is required</span>}
+      <br /> 
+
+      <label className={styles.label}>Email Address: </label>
+      {/* include validation with required or other standard HTML validation rules */}
+      <input className={styles.input} type="text" defaultValue="Your Email address"{...register("email", { required: true })} />
+      {/* errors will return when field validation fails  */}
+      {errors.email && <span className={styles.error} >This field is required</span>}
+      <br /> 
+      <label className={styles.label}>Phone Number: </label>
+      {/* include validation with required or other standard HTML validation rules */}
+      <input className={styles.input} type="text" defaultValue="Your Phone number"{...register("phone", { required: true })} />
+      {/* errors will return when field validation fails  */}
+      {errors.phone && <span className={styles.error} >This field is required</span>}
       <br /> 
       <input type="submit" />
     </form>

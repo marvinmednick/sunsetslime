@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/Navbar.module.css';
 import LoginButton from './login-btn.jsx'
+import SignInButton from './login-cognito-btn.jsx'
 import { reloadCart, } from '../redux/cart.slice';
 import { useEffect } from 'react';
 
@@ -46,10 +47,11 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <h6 className={styles.logo}>Sunset Slime</h6>
+      <h6 className={styles.logo}>Galaxy Slimes</h6>
       <ul className={styles.links}>
         <li className={styles.navlink}>
           <LoginButton />
+          <SignInButton />
         </li>
         <li className={styles.navlink}>
           <Link href="/">Home</Link>

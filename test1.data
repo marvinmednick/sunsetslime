@@ -1,0 +1,24 @@
+{
+  "Name": "Marvin Mednick",
+  "Address": "123 Main St, Anytown, USA",
+  "Email": "marvinmednick@gmail.com",
+  "Phone": "555-123-4567",
+  "Items": [
+    {
+      "ID": "20",
+      "Description": "Product 20 a slime",
+      "Price": 1.99
+    },
+    {
+      "ID": "21",
+      "Description": "Product 21 a crunchy slime",
+      "Price": 1.99
+    },
+    {
+      "ID": "22",
+      "Description": "Product 23 more slime",
+      "Price": 1.99
+    }
+  ]
+}
+
