@@ -7,12 +7,12 @@ import { SessionProvider } from "next-auth/react"
 import { Authenticator } from '@aws-amplify/ui-react';
 
 import { Amplify } from "aws-amplify";
-import awsExports from "../aws-exports";
+//import awsExports from "../aws-exports";
 
 import "@aws-amplify/ui-react/styles.css";
 import "../styles/globals.css";
 
-Amplify.configure({ ...awsExports, ssr: true });
+//Amplify.configure({ ...awsExports, ssr: true });
 
 function MyApp({
     Component,

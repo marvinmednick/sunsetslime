@@ -9,7 +9,7 @@ import {
 
 async function handle_form(cart, data) {
   
-    alert(JSON.stringify(data) + "\n" + JSON.stringify(cart));
+    alert("COMMING SOON")
     const staticFormData = {
       "Name": "Marvin Mednick",
       "Address": "2135 Abbey Lane, Campbell, CA 95008",
