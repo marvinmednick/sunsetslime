@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/order": {
+      "name": "/order",
+      "lambdaFunction": "galaxyslimeOrderprocess",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    }
+  }
+}

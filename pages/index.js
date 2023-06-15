@@ -8,6 +8,9 @@ const HomePage = () => {
         <CategoryCard image="/images/test.jpg" name="Crunchy" />
         <CategoryCard image="/images/glitter-slime-04288-800x1200.jpg" name="Glitter" />
         <CategoryCard image="/images/ClearGlitter.jpg" name="Clear" />
+        <CategoryCard image="/images/ClearGlitter.jpg" name="Clay" />
+        <CategoryCard image="/images/ClearGlitter.jpg" name="butter" />
+        <CategoryCard image="/images/ClearGlitter.jpg" name="sets" />
       </div>
     </main>
   );

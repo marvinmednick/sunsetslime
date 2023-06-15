@@ -3,34 +3,151 @@
         "desc": "Crunchy Slime"
     },
     {
-      "category": "glitter",
-      "desc": "Glitter Slime"
+      "category": "butter",
+      "desc": "Butter Slime"
+    },
+    {
+      "category": "clay",
+      "desc": "D.I.Y. Clay Slime"
+    },
+    {
+      "category": "icee",
+      "desc": "ICEE Slimes"
     },
     {
       "category": "clear",
       "desc": "Clear Slime"
+    },
+    {
+      "category": "sets",
+      "desc": "Slime Sets"
     }
     ],
     "product_list" : [
   {
     "id": 1,
-    "product": "Strawberry Crunch",
+    "product": "Cookies 'n Cream",
     "category": "crunchy",
-    "image": "https://m.media-amazon.com/images/I/41nZqWOz02L.jpg",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
     "price": 2.49
   },
   {
     "id": 2,
-    "product": "Sparlkefest",
-    "category": "glitter",
-    "image": "/images/glitter-slime-04288-800x1200.jpg",
+    "product": "Bathtub Frenzy",
+    "category": "crunchy",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
     "price": 1.99
   },
   {
     "id": 3,
-    "product": "Clearly Glitter",
-    "category": "clear",
-    "image": "/images/glitter-slime-04288-800x1200.jpg",
+    "product": "Cherry Blossoms",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 4,
+    "product": "Soccer Frenzy",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 5,
+    "product": "Snake Shake",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 6,
+    "product": "Maple Sugar",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 7,
+    "product": "Apple Pie",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 8,
+    "product": "Pancake Squish",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 9,
+    "product": "Banana Split",
+    "category": "clay",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 9,
+    "product": "Pinapple Smash",
+    "category": "butter",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 10,
+    "product": "Kiwi Punch",
+    "category": "butter",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 11,
+    "product": "Blueberry Muffin",
+    "category": "butter",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 12,
+    "product": "Bacon and Eggs",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 13,
+    "product": "Smores Trio",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 14,
+    "product": "Muffin Set",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 15,
+    "product": "Bread and Butter",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 16,
+    "product": "Cat Furs",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
+    "price": 1.99
+  },
+  {
+    "id": 17,
+    "product": "Tropical Smoothie",
+    "category": "sets",
+    "image": "/images/image-coming-soon-placeholder-768x768.png",
     "price": 1.99
   }
 ]

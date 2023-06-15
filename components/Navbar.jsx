@@ -50,6 +50,7 @@ const Navbar = () => {
       <h6 className={styles.logo}>Galaxy Slimes</h6>
       <ul className={styles.links}>
         <li className={styles.navlink}>
+        <LoginButton />
         </li>
         <li className={styles.navlink}>
           <Link href="/">Home</Link>
